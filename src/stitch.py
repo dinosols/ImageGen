@@ -9,8 +9,8 @@ import string
 
 def stitch(output_dir, *img_args):
     newImage = Image.new('RGBA', (1500, 1500))
-    name = "".join(choices(string.ascii_letters, k=5)) + "_"
-    #name = "_"
+    #name = "".join(choices(string.ascii_letters, k=5)) + "_"
+    name = "_"
     for imagePath in img_args:
         if imagePath != None:
             basename = path.basename(imagePath)
@@ -56,9 +56,7 @@ for traitType in traits:
             traitList.append(None)
     allTraitPaths.append(traitList)
 
-#print(allTraitPaths)
 traitPathCombos = list(itertools.product(*allTraitPaths))
-#print(traitPathCombos)
 
 for background in backgrounds:
     for dino in dinos:
